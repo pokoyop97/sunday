@@ -19,6 +19,7 @@ nav ul {
     transition: 1s;
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size-adjust: inherit;
+    font-weight: 900;
 }
 
 nav ul li {

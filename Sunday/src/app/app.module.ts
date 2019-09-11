@@ -6,18 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { InsideComponent } from './inside/inside.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    InsideComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
