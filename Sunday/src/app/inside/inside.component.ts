@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-inside',
   templateUrl: './inside.component.html',
-  styleUrls: ['./inside.component.css']
+  styleUrls: ['./inside.component.scss']
 })
 export class InsideComponent implements OnInit {
 
