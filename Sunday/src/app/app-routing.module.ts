@@ -7,7 +7,7 @@ import { InsideComponent } from './inside/inside.component';
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch:'full'},
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
-  {path: 'ref',component: InsideComponent,pathMatch:'full'}
+  {path: 'refi',component: InsideComponent,pathMatch:'full'},
   
 ];
 
