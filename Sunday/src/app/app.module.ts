@@ -11,6 +11,7 @@ import { InsideComponent } from './inside/inside.component';
 
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { FooterComponent } from './footer/footer.component';
  
  
 let config = new AuthServiceConfig([
@@ -33,7 +34,8 @@ export function provideConfig() {
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    InsideComponent
+    InsideComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
