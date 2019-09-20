@@ -12,12 +12,16 @@ import { InsideComponent } from './inside/inside.component';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { FooterComponent } from './footer/footer.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
  
  
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("AIzaSyCyFN37vUoVDw_iB9DKcpKtpzAO5K6gVPk")
+    provider: new GoogleLoginProvider("718488961700-scsh8jue8cuavbhebc9nq4s361q4cs9o.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
@@ -35,14 +39,15 @@ export function provideConfig() {
     HomeComponent,
     LoginComponent,
     InsideComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
     SocialLoginModule,
-
+    AngularFireModule.initializeApp(config,environment.firebase),
+ 	  AngularFirestoreModule,
     ],
   providers: [{
     provide: AuthServiceConfig,
