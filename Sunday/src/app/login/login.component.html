@@ -14,9 +14,9 @@
     <h2>Please Sign In</h2>
     <input id="email" type="email" placeholder="email" />
     <input id="password" type="password" placeholder="password" />
-    <button pButton type="button" label="Ingresar" class="ui-button-rounded"style="min-width: 200px !important;" (click)="registrar()"></button>
-    <button pButton type="button" label="Google" [routerLink]="['/refi']" routerLinkActive="active" class="ui-button-rounded ui-button-danger" style="min-width: 200px !important;" (click)="signInWithGoogle()"></button>
-    <button pButton type="button" label="Facebook" [routerLink]="['/refi']" routerLinkActive="active" class="ui-button-rounded " style="min-width: 200px !important;"(click)="signInWithFB()"></button>
+    <button pButton type="button" label="Ingresar" class="ui-button-rounded"style="min-width: 200px !important;"  [routerLink]="['/refi']" routerLinkActive="active" ></button>
+    <button pButton type="button" label="Google"class="ui-button-rounded ui-button-danger" style="min-width: 200px !important;" (click)="signInWithGoogle()"></button>
+    <button pButton type="button" label="Facebook"class="ui-button-rounded " style="min-width: 200px !important;"(click)="signInWithFB()"></button>
     <h2>&nbsp;</h2>
   </div>
 </div>

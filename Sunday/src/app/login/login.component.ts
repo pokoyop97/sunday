@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,9 @@ import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } fro
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user: SocialUser;
+  public user: any = SocialUser;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     var email = document.getElementById('email');
     var password = document.getElementById('password');
    }
@@ -23,6 +25,27 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((userData) => {
+      x =>console.log(x);
+      this.user = userData;
+      this.onLoginRedirect();
+    }).catch(err => console.log('err', err.message));
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((userData) => {
+      this.onLoginRedirect();
+      this.user = userData;
+    }).catch(err => console.log('err', err.message));
+  }
+
+  signOut(): void {
+    this.authService.signOut();
+  }
+  onLoginRedirect(): void {
+    this.router.navigate(['/refi']);
+  }
+ /*  signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(x => console.log(x));
   }
 
@@ -39,5 +62,5 @@ export class LoginComponent implements OnInit {
      console.log(email);
      console.log(password);
     
-  }
+  } */
 }
