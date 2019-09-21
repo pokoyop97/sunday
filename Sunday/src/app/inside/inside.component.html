@@ -5,13 +5,13 @@
     <h2>John D.</h2>
   </header>
 	<ul>
-    <li href="#" tabindex="1" class="icon-dashboard btn"><span>Dashboard</span></li>
-    <li href="#" tabindex="2" class="icon-customers btn"><span>Customers</span></li>
-    <li href="#" tabindex="3" class="icon-users  btn"><span>Users</span></li>
-    <li href="#" tabindex="4" class="icon-settings btn"><span>Settings</span></li>
+    <li href="#" tabindex="1" class="icon-dashboard btn"><span>Proyectos</span></li>
+    <li href="#" tabindex="2" class="icon-customers btn"><span>Tareas</span></li>
+    <li href="#" tabindex="3" class="icon-users  btn"><span>Miembros</span></li>
+    <li href="#" tabindex="4" class="icon-settings btn"><span>asdasd</span></li>
   </ul>
   <ul>
-    <li [routerLink]="['/login']" routerLinkActive="active" tabindex="5" class="icon-settings btn"><span>LogOut</span></li>
+    <li [routerLink]="['/login']" routerLinkActive="active" tabindex="5" class="icon-settings btn" (click)="signOut()"><span>LogOut</span></li>
   </ul>
 </nav>
 

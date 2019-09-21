@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'angularx-social-login';
+import { SocialUser } from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
+
 
 @Component({
   selector: 'app-inside',
@@ -6,12 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inside.component.scss']
 })
 export class InsideComponent implements OnInit {
+  user: SocialUser;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-      
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+    });
   }
-
+  signOut(): void {
+    this.authService.signOut();
+  }
 }
 

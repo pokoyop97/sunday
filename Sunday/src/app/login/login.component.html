@@ -1,14 +1,24 @@
-<div class="container" onclick="onclick">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+  <div class="container" onclick="onclick">
   <div class="top"></div>
   <div class="bottom"></div>
   <div class="center">
     <button pButton type="button" icon="pi pi-arrow-left" [routerLink]="['/']" routerLinkActive="active"></button>
     <h2>Please Sign In</h2>
-    <input type="email" placeholder="email" />
-    <input type="password" placeholder="password" />
-    <button pButton type="button" label="Ingresar" [routerLink]="['/refi']" routerLinkActive="active" class="ui-button-rounded"style="min-width: 200px !important;"></button>
-    <button pButton type="button" label="Google" class="ui-button-rounded ui-button-danger"                  style="min-width: 200px !important;" (click)="signInWithGoogle()"></button>
-    <button pButton type="button" label="Facebook" class="ui-button-rounded " style="min-width: 200px !important;"(click)="signInWithFB()"></button>
+    <input id="email" type="email" placeholder="email" />
+    <input id="password" type="password" placeholder="password" />
+    <button pButton type="button" label="Ingresar" class="ui-button-rounded"style="min-width: 200px !important;" (click)="registrar()"></button>
+    <button pButton type="button" label="Google" [routerLink]="['/refi']" routerLinkActive="active" class="ui-button-rounded ui-button-danger" style="min-width: 200px !important;" (click)="signInWithGoogle()"></button>
+    <button pButton type="button" label="Facebook" [routerLink]="['/refi']" routerLinkActive="active" class="ui-button-rounded " style="min-width: 200px !important;"(click)="signInWithFB()"></button>
     <h2>&nbsp;</h2>
   </div>
 </div>
+</body>
+</html>

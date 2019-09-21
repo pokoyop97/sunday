@@ -11,12 +11,14 @@ import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } fro
 export class LoginComponent implements OnInit {
   user: SocialUser;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+   }
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log(user);
     });
   }
 
@@ -29,7 +31,13 @@ export class LoginComponent implements OnInit {
   }
 
   signOut(): void {
-    this.authService.signOut();
+    this.authService.signOut().then(x => console.log('saliste de la pagina'));
   }
-
+  registrar(): void{
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+     console.log(email);
+     console.log(password);
+    
+  }
 }

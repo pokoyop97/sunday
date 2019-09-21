@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
- 
+import { HttpClientModule } from '@angular/common/http';
  
 let config = new AuthServiceConfig([
   {
@@ -47,7 +47,8 @@ export function provideConfig() {
     ButtonModule,
     SocialLoginModule,
     AngularFireModule.initializeApp(config,environment.firebase),
- 	  AngularFirestoreModule,
+     AngularFirestoreModule,
+     HttpClientModule
     ],
   providers: [{
     provide: AuthServiceConfig,
